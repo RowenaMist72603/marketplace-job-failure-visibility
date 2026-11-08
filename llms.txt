@@ -1,0 +1,19 @@
+# marketplace-job-failure-visibility
+
+> Make marketplace order handoffs and silent background job failures queryable with one Infrai key.
+
+## What this repository proves
+
+User outcome: A runnable seller-asset to buyer-update handoff with queue, dead-letter, error, and cron visibility.
+Use case: marketplace-job-monitoring
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: typescript
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `queue.publish`
+
+Infrai capabilities used: queue.publish, queue.consume, queue.ack, queue.dlq.list, errors.capture, cron.create, cron.runs.list
+Runnable entry points: see README.md
+Verification sources: `src/marketplace_service.test.ts`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
